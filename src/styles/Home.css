@@ -1,0 +1,228 @@
+.home-container {
+  min-height: calc(100vh - 64px);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=2370&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  color: var(--theme-text, #fff);
+  padding: 2rem 1rem;
+}
+
+.hero-section {
+  position: relative;
+  padding: 4rem 2rem 2rem;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  animation: fadeIn 1s ease-out;
+}
+
+.hero-section h1 {
+  font-size: 4.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(120deg, var(--theme-accent, #4CAF50), #45a049, #2E7D32);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -1px;
+}
+
+.subtitle {
+  font-size: 1.6rem;
+  opacity: 0.95;
+  margin-bottom: 3rem;
+  line-height: 1.4;
+  font-weight: 300;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.facts-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  animation: slideUp 1s ease-out;
+  color: var(--theme-text, #fff);
+}
+
+.fact-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 2rem;
+  text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  color: var(--theme-text, #fff);
+}
+
+.fact-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #4CAF50, #45a049);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.fact-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.fact-card:hover::before {
+  transform: scaleX(1);
+}
+
+.fact-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.fact-card:hover .fact-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.fact-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--theme-accent, #4CAF50);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.fact-card p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  line-height: 1.7;
+  color: inherit;
+  font-weight: 300;
+}
+
+.attribution {
+  position: relative;
+  text-align: center;
+  padding: 3rem 2rem;
+  font-style: italic;
+  opacity: 0.8;
+  font-size: 1.2rem;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  margin-top: 2rem;
+  color: var(--theme-text, #fff);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1200px) {
+  .facts-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 3rem 1.5rem 1.5rem;
+  }
+
+  .hero-section h1 {
+    font-size: 3.2rem;
+  }
+
+  .subtitle {
+    font-size: 1.3rem;
+    padding: 0 1rem;
+  }
+
+  .facts-grid {
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .fact-card {
+    padding: 2rem;
+  }
+
+  .fact-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .fact-icon {
+    font-size: 2.5rem;
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .facts-grid {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .fact-card {
+    padding: 1.5rem;
+  }
+
+  .fact-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .fact-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .attribution {
+    font-size: 1rem;
+    padding: 2rem 1rem;
+  }
+} 

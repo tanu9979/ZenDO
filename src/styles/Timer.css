@@ -1,0 +1,150 @@
+.timer-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 4rem);
+  padding: 2rem;
+  width: 100%;
+  background: var(--theme-background, linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.8) 100%));
+  color: var(--theme-text, #fff);
+}
+
+.timer-title {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--theme-accent, #4CAF50);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.mode-indicator {
+  font-size: 1.8rem;
+  color: var(--theme-accent, #4CAF50);
+  margin-bottom: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.timer-display {
+  font-size: 8rem;
+  font-weight: bold;
+  margin: 2rem 0;
+  padding: 3rem 4rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  min-width: 400px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--theme-text, #fff);
+}
+
+.timer-controls {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.control-button {
+  padding: 1.2rem 2.5rem;
+  font-size: 1.4rem;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: var(--theme-accent, #4CAF50);
+  color: var(--theme-background, #23272e);
+  min-width: 150px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.control-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+  background: #45a049;
+}
+
+.control-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(76, 175, 80, 0.2);
+}
+
+.back-button {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--theme-text, #fff);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(-5px);
+}
+
+@media (max-width: 768px) {
+  .timer-title {
+    font-size: 2.5rem;
+  }
+
+  .mode-indicator {
+    font-size: 1.4rem;
+  }
+
+  .timer-display {
+    font-size: 5rem;
+    min-width: 300px;
+    padding: 2rem;
+  }
+
+  .control-button {
+    padding: 1rem 2rem;
+    min-width: 120px;
+    font-size: 1.2rem;
+  }
+
+  .back-button {
+    top: 1rem;
+    left: 1rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .timer-display {
+    font-size: 4rem;
+    min-width: 280px;
+    padding: 1.5rem;
+  }
+
+  .control-button {
+    padding: 0.8rem 1.6rem;
+    min-width: 100px;
+    font-size: 1rem;
+  }
+
+  .back-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+} 
